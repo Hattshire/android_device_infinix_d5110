@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The Android Open-Source Project
+# Copyright (C) 2015 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +14,9 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := d5110
-PRODUCT_NAME := full_d5110
-PRODUCT_BRAND := infinix
-PRODUCT_MODEL := d5110_infinix
-PRODUCT_MANUFACTURER := infinix
+$(call inherit-product, device/lge/miniwaffle/full_miniwaffle.mk)
+
+PRODUCT_NAME := omni_miniwaffle

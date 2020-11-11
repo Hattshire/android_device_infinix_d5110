@@ -1,1 +1,1 @@
-# android_device_infinix_d5110
+# android_device_lge_miniwaffle
