@@ -41,7 +41,7 @@ BOARD_KERNEL_CMDLINE += \
 	androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS  := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --tags_offset 0x0e000000 --board X510-D5110-L-20
+BOARD_MKBOOTIMG_ARGS  := --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x00000100 --board 1437492126
 TARGET_PREBUILT_KERNEL := device/lge/miniwaffle/prebuilt/kernel
 
 # TARGET IMAGES
@@ -53,11 +53,10 @@ TARGET_RECOVERY_FSTAB := device/lge/miniwaffle/recovery/root/twrp.fstab
 # PARTTIONS
 # We need the partitions size in decimal
 # Use cat proc/partitions via adb, then block size * 1024
-# This is the partitions of Infinix ROM, system size is bigger than Android One ROM
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2634022912
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12538347520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1887436800
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 4551344128
 # For the following line, do KERNEL_PAGE_SIZE * 64 (Most of time it is 2048 * 64)
 BOARD_FLASH_BLOCK_SIZE := 131072
 
